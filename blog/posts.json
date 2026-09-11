@@ -1,0 +1,16 @@
+[
+  {
+    "title": "CVE-2026-41037 — Missing Rate Limiting in Quantum Networks QNOS",
+    "tag": "research",
+    "excerpt": "Brute-forced the admin panel of a QN-I-470 router with 268 attempts — zero rate limiting, zero lockout. Full administrative compromise via CWE-307.",
+    "date": "Jan 2026",
+    "url": "blog/cve-2026-ratelimit-quantum.html"
+  },
+  {
+    "title": "CVE-2026-30081 — Cleartext Transmission in Quantum Networks Routers",
+    "tag": "research",
+    "excerpt": "Admin credentials transmitted in plaintext over HTTP on the QN-I-470 router. Intercepted via packet capture on the same network segment. CWE-319.",
+    "date": "Jan 2026",
+    "url": "blog/cve-2026-cleartext-quantum.html"
+  }
+]

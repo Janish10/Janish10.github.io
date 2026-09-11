@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Writeups — Janish Andrin</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0f'/><text y='72' x='50' text-anchor='middle' font-size='52' font-weight='900' font-family='system-ui,sans-serif' fill='%2300ff88'>JA</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .blog-page-hero {
+      padding: 140px 0 60px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      transition: color var(--transition);
+    }
+    .back-link svg { width: 16px; height: 16px; }
+    .back-link:hover { color: var(--accent); }
+    .blog-page-heading {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .blog-page-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+    .blog-page-grid {
+      padding: 0 0 var(--section-pad);
+    }
+    .blog-filter {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .blog-filter-btn {
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .blog-filter-btn:hover,
+    .blog-filter-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">JA<span class="logo-dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#ctf">CTF</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="blog.html" style="color:var(--text)">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html#about">About</a>
+      <a href="index.html#ctf">CTF</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="blog-page-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to home
+      </a>
+      <h1 class="blog-page-heading">Blog &amp;<br />Writeups<span class="accent">.</span></h1>
+      <p class="blog-page-sub">CTF writeups, vulnerability research notes, and technical deep-dives.</p>
+    </div>
+  </div>
+
+  <div class="blog-page-grid">
+    <div class="container">
+      <div class="blog-filter" id="blog-filter">
+        <button class="blog-filter-btn active" data-filter="all">All</button>
+        <button class="blog-filter-btn" data-filter="writeup">Writeups</button>
+        <button class="blog-filter-btn" data-filter="blog">Blog</button>
+        <button class="blog-filter-btn" data-filter="research">Research</button>
+      </div>
+      <div class="blog-grid" id="blog-all-grid">
+        <div class="blog-empty">
+          <div class="blog-empty-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <p>Posts coming soon.</p>
+          <span>CTF writeups and security research</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">JA<span class="accent">.</span></span>
+      <span class="footer-copy">&copy; 2026 Janish Andrin.</span>
+      <div class="footer-links">
+        <a href="mailto:janishandrin75@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/janish-andrin/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Janish10" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://ctftime.org/team/311156" target="_blank" rel="noopener">CTFtime</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    const grid = document.getElementById('blog-all-grid');
+    const filterBtns = document.querySelectorAll('.blog-filter-btn');
+    let allPosts = [];
+
+    const tagClassMap = {
+      writeup: 'blog-card-tag--writeup',
+      blog: 'blog-card-tag--blog',
+      research: 'blog-card-tag--research',
+    };
+
+    function renderPosts(posts) {
+      if (!posts.length) {
+        grid.innerHTML = `
+          <div class="blog-empty">
+            <div class="blog-empty-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <p>No posts in this category yet.</p>
+          </div>`;
+        return;
+      }
+      grid.innerHTML = '';
+      posts.forEach(post => {
+        const tagClass = tagClassMap[post.tag] || 'blog-card-tag--blog';
+        const card = document.createElement('a');
+        card.href = post.url;
+        card.className = 'blog-card';
+        card.dataset.tag = post.tag;
+        card.innerHTML = `
+          <span class="blog-card-tag ${tagClass}">${post.tag}</span>
+          <h3 class="blog-card-title">${post.title}</h3>
+          <p class="blog-card-excerpt">${post.excerpt}</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto">
+            <span class="blog-card-date">${post.date}</span>
+            <span class="blog-card-link">Read &rarr;</span>
+          </div>`;
+        grid.appendChild(card);
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        renderPosts(f === 'all' ? allPosts : allPosts.filter(p => p.tag === f));
+      });
+    });
+
+    fetch('blog/posts.json')
+      .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(posts => { allPosts = posts; renderPosts(posts); })
+      .catch(() => {});
+  </script>
+</body>
+</html>

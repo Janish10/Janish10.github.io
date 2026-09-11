@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POST TITLE — Janish Andrin</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0f'/><text y='72' x='50' text-anchor='middle' font-size='52' font-weight='900' font-family='system-ui,sans-serif' fill='%2300ff88'>JA</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .post-hero { padding: 140px 0 40px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      transition: color var(--transition);
+    }
+    .back-link svg { width: 16px; height: 16px; }
+    .back-link:hover { color: var(--accent); }
+    .post-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .post-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .post-meta {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      display: flex;
+      gap: 16px;
+    }
+    .post-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 60px) var(--section-pad);
+    }
+    .post-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .post-body h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 2rem 0 0.75rem;
+    }
+    .post-body p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .post-body a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-body a:hover { color: var(--text); }
+    .post-body ul, .post-body ol {
+      margin: 0.5rem 0 1.2rem 1.5rem;
+      color: var(--text-muted);
+    }
+    .post-body li {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 0.3rem;
+    }
+    .post-body code {
+      font-family: var(--font-mono);
+      font-size: 0.85em;
+      background: var(--surface);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+    .post-body pre {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+    }
+    .post-body pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .post-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 0 0.5rem 1.2rem;
+      margin: 1rem 0 1.5rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .post-body img {
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">JA<span class="logo-dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#ctf">CTF</a></li>
+        <li><a href="../index.html#research">Research</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../blog.html" style="color:var(--text)">Blog</a></li>
+        <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#ctf">CTF</a>
+      <a href="../index.html#research">Research</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="post-hero">
+    <div class="container">
+      <a href="../blog.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to blog
+      </a>
+      <span class="post-tag">WRITEUP</span>
+      <h1 class="post-title">Your Post Title Here</h1>
+      <div class="post-meta">
+        <span>September 2026</span>
+        <span>Janish Andrin</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="post-body">
+
+    <h2>Overview</h2>
+    <p>Write your introduction here. Describe the challenge, the target, or the research question.</p>
+
+    <h2>Reconnaissance</h2>
+    <p>Describe your initial approach and what you found during enumeration.</p>
+
+    <pre><code>$ nmap -sV target.com
+# paste relevant output here</code></pre>
+
+    <h2>Exploitation</h2>
+    <p>Walk through the exploit chain step by step.</p>
+
+    <h2>Flag / Impact</h2>
+    <blockquote>flag{example_flag_here}</blockquote>
+
+    <h2>Takeaways</h2>
+    <ul>
+      <li>What you learned</li>
+      <li>What you'd do differently</li>
+      <li>Related techniques to explore</li>
+    </ul>
+
+  </article>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">JA<span class="accent">.</span></span>
+      <span class="footer-copy">&copy; 2026 Janish Andrin.</span>
+      <div class="footer-links">
+        <a href="mailto:janishandrin75@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/janish-andrin/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Janish10" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://ctftime.org/team/311156" target="_blank" rel="noopener">CTFtime</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  </script>
+</body>
+</html>
