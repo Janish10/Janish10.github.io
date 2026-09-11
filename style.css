@@ -945,6 +945,18 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
+.project-live-badge {
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--border-hi);
+}
 .project-link {
   width: 32px;
   height: 32px;
